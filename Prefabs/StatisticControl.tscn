@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvq15u1cvn5qt"]
+
+[ext_resource type="Script" path="res://Scripts/StatisticControl.cs" id="1_4e8ko"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_sj2ub"]
+
+[node name="StatisticControl" type="Control" node_paths=PackedStringArray("_TitleLabel", "_ValueLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -620.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4e8ko")
+_TitleLabel = NodePath("TitileLabel")
+_ValueLabel = NodePath("ValueLabel")
+
+[node name="TitileLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 480.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_sj2ub")
+theme_override_font_sizes/font_size = 32
+text = "Games played"
+vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_right = 642.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_sj2ub")
+theme_override_font_sizes/font_size = 32
+text = "1"
+vertical_alignment = 1

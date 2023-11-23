@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://hphq3dsidi61"]
+
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="1_r0xvq"]
+[ext_resource type="Script" path="res://Scripts/LeaderboardControl.cs" id="1_r8n5d"]
+
+[node name="LeaderboardControl" type="Control" node_paths=PackedStringArray("_RankLabel", "_UsernameLabel", "_TimeLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -620.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8n5d")
+_RankLabel = NodePath("RankLabel")
+_UsernameLabel = NodePath("UsernameLabel")
+_TimeLabel = NodePath("TimeLabel")
+
+[node name="RankLabel" type="Label" parent="."]
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_r0xvq")
+theme_override_font_sizes/font_size = 32
+text = "1."
+vertical_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="."]
+offset_left = 90.0
+offset_right = 530.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_r0xvq")
+theme_override_font_sizes/font_size = 32
+text = "Games played"
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 550.0
+offset_right = 632.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_r0xvq")
+theme_override_font_sizes/font_size = 32
+text = "1"
+vertical_alignment = 1
