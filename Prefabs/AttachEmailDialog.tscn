@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk3kjnau7kbhv"]
+
+[ext_resource type="Script" path="res://Scripts/AttachEmailDialog.cs" id="1_fodl6"]
+[ext_resource type="Texture2D" uid="uid://b3bs2ei6k2d6y" path="res://Textures/DialogBox-Small.png" id="2_yeegs"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="3_5tidf"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="4_4lix8"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="5_d6rgd"]
+[ext_resource type="Texture2D" uid="uid://sxjsxq2ejxt8" path="res://Textures/BlueButton-Default.png" id="6_pu204"]
+[ext_resource type="Texture2D" uid="uid://dyfv7wu1t624w" path="res://Textures/BlueButton-Pressed.png" id="7_nqaqa"]
+[ext_resource type="Texture2D" uid="uid://b1nicuxa804vo" path="res://Textures/GreyButton.png" id="8_plosa"]
+
+[node name="AttachEmailDialog" type="Control" node_paths=PackedStringArray("_AttachButton", "_EmailLineEdit", "_PasswordLineEdit", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fodl6")
+_AttachButton = NodePath("Background/AttachButton")
+_EmailLineEdit = NodePath("Background/EmailLineEdit")
+_PasswordLineEdit = NodePath("Background/PasswordLineEdit")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 460.0
+texture = ExtResource("2_yeegs")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 177.5
+offset_top = 8.0
+offset_right = 462.5
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 48
+text = "Attach Email"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("4_4lix8")
+texture_pressed = ExtResource("5_d6rgd")
+
+[node name="AttachButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 232.0
+texture_normal = ExtResource("6_pu204")
+texture_pressed = ExtResource("7_nqaqa")
+texture_disabled = ExtResource("8_plosa")
+
+[node name="Label" type="Label" parent="Background/AttachButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 28
+text = "Attach"
+horizontal_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 85.0
+offset_right = 238.0
+offset_bottom = 121.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 32
+text = "Email:"
+horizontal_alignment = 2
+
+[node name="PasswordLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 140.0
+offset_right = 238.0
+offset_bottom = 176.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 32
+text = "Password:"
+horizontal_alignment = 2
+
+[node name="EmailLineEdit" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 85.0
+offset_right = 520.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter email..."
+max_length = 60
+
+[node name="PasswordLineEdit" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 140.0
+offset_right = 520.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("3_5tidf")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter password..."
+max_length = 60
+secret = true
