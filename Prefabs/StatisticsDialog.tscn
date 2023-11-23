@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbpqfy4i55eds"]
+
+[ext_resource type="Script" path="res://Scripts/StatisticsDialog.cs" id="1_73i0r"]
+[ext_resource type="Texture2D" uid="uid://dutyh4ie32voe" path="res://Textures/DialogBox-Medium.png" id="2_dgwiy"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="3_ycitc"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="4_dtenu"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="5_tq35h"]
+
+[node name="StatisticsDialog" type="Control" node_paths=PackedStringArray("_Containers", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73i0r")
+_Containers = [NodePath("Background/Container1"), NodePath("Background/Container2"), NodePath("Background/Container3"), NodePath("Background/Container4"), NodePath("Background/Container5"), NodePath("Background/Container6"), NodePath("Background/Container7"), NodePath("Background/Container8")]
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 310.0
+offset_top = 108.0
+offset_right = 970.0
+offset_bottom = 612.0
+texture = ExtResource("2_dgwiy")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 444.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_ycitc")
+theme_override_font_sizes/font_size = 48
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("4_dtenu")
+texture_pressed = ExtResource("5_tq35h")
+
+[node name="Container1" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 660.0
+offset_bottom = 110.0
+
+[node name="Container2" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 660.0
+offset_bottom = 160.0
+
+[node name="Container3" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 170.0
+offset_right = 660.0
+offset_bottom = 210.0
+
+[node name="Container4" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 220.0
+offset_right = 660.0
+offset_bottom = 260.0
+
+[node name="Container5" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 270.0
+offset_right = 660.0
+offset_bottom = 310.0
+
+[node name="Container6" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 660.0
+offset_bottom = 360.0
+
+[node name="Container7" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 370.0
+offset_right = 660.0
+offset_bottom = 410.0
+
+[node name="Container8" type="Container" parent="Background"]
+layout_mode = 0
+offset_top = 420.0
+offset_right = 660.0
+offset_bottom = 460.0

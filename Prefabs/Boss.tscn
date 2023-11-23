@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwi3x06dx6rdr"]
+
+[ext_resource type="Script" path="res://Scripts/Boss.cs" id="1_gs4va"]
+[ext_resource type="Texture2D" uid="uid://b3f271lq732k0" path="res://Textures/Boss.png" id="2_7eocj"]
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_gs4va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7eocj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(149, -124, 145, -168, 84, -169, 31, -98, -10, -94, -38, -126, -142, -134, -147, -120, -78, -79, -51, -31, -48, 29, -78, 76, -148, 120, -142, 133, -36, 120, -8, 94, 28, 98, 85, 169, 144, 165, 149, 125, 100, 78, 77, 75, 48, 31, 48, -27, 75, -73, 97, -78)
+
+[connection signal="area_entered" from="Area2D" to="." method="_OnAreaEntered"]
