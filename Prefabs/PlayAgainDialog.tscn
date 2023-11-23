@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://bg7xpsxi68qld"]
+
+[ext_resource type="Script" path="res://Scripts/PlayAgainDialog.cs" id="1_5qj31"]
+[ext_resource type="Texture2D" uid="uid://cf3nt2qb721vn" path="res://Textures/DialogBox-Narrow.png" id="1_cb6uw"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_e0hcx"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="3_66geh"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="4_yos3d"]
+[ext_resource type="Texture2D" uid="uid://sxjsxq2ejxt8" path="res://Textures/BlueButton-Default.png" id="5_vhkhp"]
+[ext_resource type="Texture2D" uid="uid://dyfv7wu1t624w" path="res://Textures/BlueButton-Pressed.png" id="6_6kqgl"]
+[ext_resource type="Texture2D" uid="uid://b1nicuxa804vo" path="res://Textures/GreyButton.png" id="7_qi1va"]
+[ext_resource type="Texture2D" uid="uid://8yhc1vv0wgxm" path="res://Textures/RedButton-Default.png" id="8_1i63k"]
+[ext_resource type="Texture2D" uid="uid://d1w2okoewvp3j" path="res://Textures/RedButton-Pressed.png" id="9_ml1he"]
+
+[node name="PlayAgainDialog" type="Control" node_paths=PackedStringArray("_NewGameButton", "_BrainCloudButton", "_MainMenuButton", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qj31")
+_NewGameButton = NodePath("Background/NewGameButton")
+_BrainCloudButton = NodePath("Background/BrainCloudButton")
+_MainMenuButton = NodePath("Background/MainMenuButton")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 460.0
+texture = ExtResource("1_cb6uw")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 95.5
+offset_top = 8.0
+offset_right = 304.5
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_e0hcx")
+theme_override_font_sizes/font_size = 48
+text = "Play Again?"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("3_66geh")
+texture_pressed = ExtResource("4_yos3d")
+
+[node name="NewGameButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 90.0
+offset_right = 280.0
+offset_bottom = 122.0
+texture_normal = ExtResource("5_vhkhp")
+texture_pressed = ExtResource("6_6kqgl")
+texture_disabled = ExtResource("7_qi1va")
+
+[node name="Label" type="Label" parent="Background/NewGameButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_e0hcx")
+theme_override_font_sizes/font_size = 28
+text = "New Game"
+horizontal_alignment = 1
+
+[node name="BrainCloudButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 135.0
+offset_right = 280.0
+offset_bottom = 167.0
+texture_normal = ExtResource("5_vhkhp")
+texture_pressed = ExtResource("6_6kqgl")
+texture_disabled = ExtResource("7_qi1va")
+
+[node name="Label" type="Label" parent="Background/BrainCloudButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_e0hcx")
+theme_override_font_sizes/font_size = 28
+text = "BrainCloud
+"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 180.0
+offset_right = 280.0
+offset_bottom = 212.0
+texture_normal = ExtResource("8_1i63k")
+texture_pressed = ExtResource("9_ml1he")
+texture_disabled = ExtResource("7_qi1va")
+
+[node name="Label" type="Label" parent="Background/MainMenuButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_e0hcx")
+theme_override_font_sizes/font_size = 28
+text = "Main Menu"
+horizontal_alignment = 1
