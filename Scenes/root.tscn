@@ -1,0 +1,183 @@
+[gd_scene load_steps=20 format=3 uid="uid://cf87ik5qt1bp2"]
+
+[ext_resource type="Script" path="res://Scripts/Game.cs" id="1_5hdwd"]
+[ext_resource type="Script" path="res://Scripts/ScrollingBackground.cs" id="1_42amo"]
+[ext_resource type="Texture2D" uid="uid://1o7acpfvirqo" path="res://Textures/Background.png" id="1_r2idn"]
+[ext_resource type="Script" path="res://Scripts/Ship.cs" id="3_leh1q"]
+[ext_resource type="Texture2D" uid="uid://c5kqsklkgu2g7" path="res://Textures/Ship.png" id="4_w6ug1"]
+[ext_resource type="Script" path="res://Scripts/Spawner.cs" id="5_2omoa"]
+[ext_resource type="Script" path="res://Scripts/HUD.cs" id="7_iy1sd"]
+[ext_resource type="Texture2D" uid="uid://c6tglh03olvb1" path="res://Textures/Divider.png" id="7_ph2cu"]
+[ext_resource type="Texture2D" uid="uid://qno3pams5cev" path="res://Textures/HealthText.png" id="8_ad2ha"]
+[ext_resource type="Texture2D" uid="uid://bbjbjeo6tfu5m" path="res://Textures/ShieldText.png" id="9_fi0jc"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="10_wbpjx"]
+[ext_resource type="Texture2D" uid="uid://b4ev65iu7l5kf" path="res://Textures/DangerBar.png" id="10_x8qkw"]
+[ext_resource type="Texture2D" uid="uid://bqhl88ehms4rv" path="res://Textures/HealthBar.png" id="11_h4bfa"]
+[ext_resource type="Script" path="res://Scripts/HealthBar.cs" id="12_6xyxy"]
+[ext_resource type="Texture2D" uid="uid://5f72s536ryhj" path="res://Textures/BarOutline.png" id="12_g7r23"]
+[ext_resource type="Texture2D" uid="uid://bilhd3asojl6p" path="res://Textures/ShieldBar.png" id="13_fi0qy"]
+[ext_resource type="Texture2D" uid="uid://2yw0qhtpa5tj" path="res://Textures/TimeDivider.png" id="14_px3kw"]
+[ext_resource type="Script" path="res://Scripts/ShieldBar.cs" id="16_04xi1"]
+[ext_resource type="Script" path="res://Scripts/DialogManager.cs" id="19_8byqp"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_Ship", "_HUD", "_ClippingRect")]
+script = ExtResource("1_5hdwd")
+_Ship = NodePath("ClippingRect/Ship")
+_HUD = NodePath("HUD")
+_ClippingRect = NodePath("ClippingRect")
+
+[node name="ScrollingBackground" type="Node2D" parent="."]
+script = ExtResource("1_42amo")
+
+[node name="Segment1" type="Sprite2D" parent="ScrollingBackground"]
+texture = ExtResource("1_r2idn")
+centered = false
+
+[node name="Segment2" type="Sprite2D" parent="ScrollingBackground"]
+position = Vector2(1280, 0)
+texture = ExtResource("1_r2idn")
+centered = false
+
+[node name="ClippingRect" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_top = 48.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Spawner" type="Node2D" parent="ClippingRect"]
+script = ExtResource("5_2omoa")
+
+[node name="Ship" type="Node2D" parent="ClippingRect"]
+visible = false
+position = Vector2(200, 0)
+script = ExtResource("3_leh1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClippingRect/Ship"]
+texture = ExtResource("4_w6ug1")
+
+[node name="Area2D" type="Area2D" parent="ClippingRect/Ship"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClippingRect/Ship/Area2D"]
+polygon = PackedVector2Array(32, 3, -19, 41, -24, 41, -33, 10, -33, -10, -24, -41, -19, -41, 32, -3)
+
+[node name="HUD" type="Node2D" parent="." node_paths=PackedStringArray("_timerLabel", "_mainInformation", "_secondaryInformation", "_infoControlMask")]
+script = ExtResource("7_iy1sd")
+_timerLabel = NodePath("TimeLabel")
+_mainInformation = NodePath("PrimaryInfoLabel")
+_secondaryInformation = NodePath("SecondaryInfoLabel")
+_infoControlMask = NodePath("ClippingRect")
+
+[node name="Divider" type="Sprite2D" parent="HUD"]
+position = Vector2(0, 47)
+texture = ExtResource("7_ph2cu")
+centered = false
+
+[node name="HealthLabel" type="Sprite2D" parent="HUD"]
+position = Vector2(56, 24)
+texture = ExtResource("8_ad2ha")
+
+[node name="ShieldLabel" type="Sprite2D" parent="HUD"]
+position = Vector2(1224, 24)
+texture = ExtResource("9_fi0jc")
+
+[node name="TimeLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 441.0
+offset_top = 9.0
+offset_right = 562.0
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_wbpjx")
+theme_override_font_sizes/font_size = 28
+text = "Time: 00:00"
+horizontal_alignment = 2
+
+[node name="HealthBar" type="Node2D" parent="HUD" node_paths=PackedStringArray("_fillBar", "_dangerFillBar")]
+position = Vector2(228, 24)
+script = ExtResource("12_6xyxy")
+_fillBar = NodePath("Fill")
+_dangerFillBar = NodePath("DangerFill")
+
+[node name="DangerFill" type="Sprite2D" parent="HUD/HealthBar"]
+position = Vector2(-135, -5.5)
+texture = ExtResource("10_x8qkw")
+centered = false
+
+[node name="Fill" type="Sprite2D" parent="HUD/HealthBar"]
+position = Vector2(-135, -5.5)
+texture = ExtResource("11_h4bfa")
+centered = false
+
+[node name="Outline" type="Sprite2D" parent="HUD/HealthBar"]
+texture = ExtResource("12_g7r23")
+
+[node name="ShieldBar" type="Node2D" parent="HUD" node_paths=PackedStringArray("_fillBar", "_dangerFillBar")]
+position = Vector2(1052, 24)
+script = ExtResource("16_04xi1")
+_fillBar = NodePath("Fill")
+_dangerFillBar = NodePath("DangerFill")
+
+[node name="DangerFill" type="Sprite2D" parent="HUD/ShieldBar"]
+position = Vector2(-135, -5.5)
+texture = ExtResource("10_x8qkw")
+centered = false
+
+[node name="Fill" type="Sprite2D" parent="HUD/ShieldBar"]
+position = Vector2(-135, -5.5)
+texture = ExtResource("13_fi0qy")
+centered = false
+
+[node name="Outline" type="Sprite2D" parent="HUD/ShieldBar"]
+texture = ExtResource("12_g7r23")
+
+[node name="TimeDivider" type="Sprite2D" parent="HUD"]
+position = Vector2(578, 24)
+texture = ExtResource("14_px3kw")
+
+[node name="PrimaryInfoLabel" type="Label" parent="HUD"]
+visible = false
+offset_left = 180.0
+offset_top = 220.0
+offset_right = 1100.0
+offset_bottom = 370.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("10_wbpjx")
+theme_override_font_sizes/font_size = 144
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondaryInfoLabel" type="Label" parent="HUD"]
+visible = false
+offset_left = 180.0
+offset_top = 380.0
+offset_right = 1100.0
+offset_bottom = 432.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("10_wbpjx")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClippingRect" type="Control" parent="HUD"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 595.0
+offset_right = 875.0
+offset_bottom = 47.0
+
+[node name="DialogManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_8byqp")
+
+[connection signal="area_entered" from="ClippingRect/Ship/Area2D" to="ClippingRect/Ship" method="_OnAreaEntered"]
