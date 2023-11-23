@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt3rhpiyoyf8x"]
+
+[ext_resource type="Script" path="res://Scripts/LevelSelectDialog.cs" id="1_4lich"]
+[ext_resource type="Texture2D" uid="uid://cf3nt2qb721vn" path="res://Textures/DialogBox-Narrow.png" id="1_q0qnr"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_rs73m"]
+[ext_resource type="Texture2D" uid="uid://sxjsxq2ejxt8" path="res://Textures/BlueButton-Default.png" id="5_lr7jn"]
+[ext_resource type="Texture2D" uid="uid://dyfv7wu1t624w" path="res://Textures/BlueButton-Pressed.png" id="6_eft0f"]
+[ext_resource type="Texture2D" uid="uid://b1nicuxa804vo" path="res://Textures/GreyButton.png" id="7_isjqu"]
+[ext_resource type="Texture2D" uid="uid://8yhc1vv0wgxm" path="res://Textures/RedButton-Default.png" id="8_sw3pv"]
+[ext_resource type="Texture2D" uid="uid://d1w2okoewvp3j" path="res://Textures/RedButton-Pressed.png" id="9_pi24l"]
+
+[node name="LevelSelectDialog" type="Control" node_paths=PackedStringArray("_LevelOneButton", "_LevelTwoButton", "_LevelThreeButton", "_BossLevelButton", "_MainMenuButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lich")
+_LevelOneButton = NodePath("Background/LevelOneButton")
+_LevelTwoButton = NodePath("Background/LevelTwoButton")
+_LevelThreeButton = NodePath("Background/LevelThreeButton")
+_BossLevelButton = NodePath("Background/BossLevelButton")
+_MainMenuButton = NodePath("Background/MainMenuButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 460.0
+texture = ExtResource("1_q0qnr")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 8.0
+offset_right = 314.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 48
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="LevelOneButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 75.0
+offset_right = 280.0
+offset_bottom = 107.0
+texture_normal = ExtResource("5_lr7jn")
+texture_pressed = ExtResource("6_eft0f")
+texture_disabled = ExtResource("7_isjqu")
+
+[node name="Label" type="Label" parent="Background/LevelOneButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 28
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="LevelTwoButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 110.0
+offset_right = 280.0
+offset_bottom = 142.0
+texture_normal = ExtResource("5_lr7jn")
+texture_pressed = ExtResource("6_eft0f")
+texture_disabled = ExtResource("7_isjqu")
+
+[node name="Label" type="Label" parent="Background/LevelTwoButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 28
+text = "Level 2"
+horizontal_alignment = 1
+
+[node name="LevelThreeButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 145.0
+offset_right = 280.0
+offset_bottom = 177.0
+texture_normal = ExtResource("5_lr7jn")
+texture_pressed = ExtResource("6_eft0f")
+texture_disabled = ExtResource("7_isjqu")
+
+[node name="Label" type="Label" parent="Background/LevelThreeButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 28
+text = "Level 3"
+horizontal_alignment = 1
+
+[node name="BossLevelButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 180.0
+offset_right = 280.0
+offset_bottom = 212.0
+texture_normal = ExtResource("5_lr7jn")
+texture_pressed = ExtResource("6_eft0f")
+texture_disabled = ExtResource("7_isjqu")
+
+[node name="Label" type="Label" parent="Background/BossLevelButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 28
+text = "Boss Level"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 215.0
+offset_right = 280.0
+offset_bottom = 247.0
+texture_normal = ExtResource("8_sw3pv")
+texture_pressed = ExtResource("9_pi24l")
+texture_disabled = ExtResource("7_isjqu")
+
+[node name="Label" type="Label" parent="Background/MainMenuButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_rs73m")
+theme_override_font_sizes/font_size = 28
+text = "Main Menu"
+horizontal_alignment = 1
