@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://by0avuf3qsryh"]
+
+[ext_resource type="Script" path="res://Scripts/PauseDialog.cs" id="1_as2g8"]
+[ext_resource type="Texture2D" uid="uid://cf3nt2qb721vn" path="res://Textures/DialogBox-Narrow.png" id="1_mhqr0"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_pmlwr"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="3_c41en"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="4_3ttqm"]
+[ext_resource type="Texture2D" uid="uid://sxjsxq2ejxt8" path="res://Textures/BlueButton-Default.png" id="5_6ob8s"]
+[ext_resource type="Texture2D" uid="uid://dyfv7wu1t624w" path="res://Textures/BlueButton-Pressed.png" id="6_2kpqe"]
+[ext_resource type="Texture2D" uid="uid://b1nicuxa804vo" path="res://Textures/GreyButton.png" id="7_t80ks"]
+[ext_resource type="Texture2D" uid="uid://8yhc1vv0wgxm" path="res://Textures/RedButton-Default.png" id="8_mm0k2"]
+[ext_resource type="Texture2D" uid="uid://d1w2okoewvp3j" path="res://Textures/RedButton-Pressed.png" id="9_p416v"]
+
+[node name="PauseDialog" type="Control" node_paths=PackedStringArray("_ResumeButton", "_BrainCloudButton", "_MainMenuButton", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_as2g8")
+_ResumeButton = NodePath("Background/ResumeButton")
+_BrainCloudButton = NodePath("Background/BrainCloudButton")
+_MainMenuButton = NodePath("Background/MainMenuButton")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 460.0
+texture = ExtResource("1_mhqr0")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 8.0
+offset_right = 257.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_pmlwr")
+theme_override_font_sizes/font_size = 48
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("3_c41en")
+texture_pressed = ExtResource("4_3ttqm")
+
+[node name="ResumeButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 90.0
+offset_right = 280.0
+offset_bottom = 122.0
+texture_normal = ExtResource("5_6ob8s")
+texture_pressed = ExtResource("6_2kpqe")
+texture_disabled = ExtResource("7_t80ks")
+
+[node name="Label" type="Label" parent="Background/ResumeButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_pmlwr")
+theme_override_font_sizes/font_size = 28
+text = "Resume"
+horizontal_alignment = 1
+
+[node name="BrainCloudButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 135.0
+offset_right = 280.0
+offset_bottom = 167.0
+texture_normal = ExtResource("5_6ob8s")
+texture_pressed = ExtResource("6_2kpqe")
+texture_disabled = ExtResource("7_t80ks")
+
+[node name="Label" type="Label" parent="Background/BrainCloudButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_pmlwr")
+theme_override_font_sizes/font_size = 28
+text = "BrainCloud
+"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 180.0
+offset_right = 280.0
+offset_bottom = 212.0
+texture_normal = ExtResource("8_mm0k2")
+texture_pressed = ExtResource("9_p416v")
+texture_disabled = ExtResource("7_t80ks")
+
+[node name="Label" type="Label" parent="Background/MainMenuButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_pmlwr")
+theme_override_font_sizes/font_size = 28
+text = "Main Menu"
+horizontal_alignment = 1

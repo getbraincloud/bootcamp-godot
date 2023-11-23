@@ -1,0 +1,212 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3b7fu3ibw4dm"]
+
+[ext_resource type="Script" path="res://Scripts/BrainCloudDialog.cs" id="1_6ilou"]
+[ext_resource type="Texture2D" uid="uid://bubj2v5w7h0aa" path="res://Textures/DialogBox-Small2.png" id="1_6yqt5"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_ar8lo"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="3_5erej"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="4_tudb5"]
+[ext_resource type="Texture2D" uid="uid://bbhta37764wqy" path="res://Textures/BlueButtonWide-Default.png" id="6_iq8wk"]
+[ext_resource type="Texture2D" uid="uid://bvg1bmmtx47vw" path="res://Textures/BlueButtonWide-Pressed.png" id="7_qnqc4"]
+[ext_resource type="Texture2D" uid="uid://dimty2n7dusgh" path="res://Textures/GreyButtonWide.png" id="8_vhib3"]
+[ext_resource type="Texture2D" uid="uid://eew4i76fs4n3" path="res://Textures/RedButtonWide-Default.png" id="9_wsoap"]
+[ext_resource type="Texture2D" uid="uid://cua2yrlorsee4" path="res://Textures/RedButtonWide-Pressed.png" id="10_2xf6n"]
+
+[node name="BrainCloudDialog" type="Control" node_paths=PackedStringArray("_AttachEmailButton", "_ChangeUsernameButton", "_LeaderboardsButton", "_StatisticsButton", "_AchievementsButton", "_LogOutButton", "_LogInButton", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ilou")
+_AttachEmailButton = NodePath("Background/AttachEmailButton")
+_ChangeUsernameButton = NodePath("Background/ChangeUsernameButton")
+_LeaderboardsButton = NodePath("Background/LeaderboardsButton")
+_StatisticsButton = NodePath("Background/StatisticsButton")
+_AchievementsButton = NodePath("Background/AchievementsButton")
+_LogOutButton = NodePath("Background/LogOutButton")
+_LogInButton = NodePath("Background/LogInButton")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 460.0
+texture = ExtResource("1_6yqt5")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 8.0
+offset_right = 415.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 48
+text = "BrainCloud"
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("3_5erej")
+texture_pressed = ExtResource("4_tudb5")
+
+[node name="AttachEmailButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 75.0
+offset_right = 420.0
+offset_bottom = 107.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/AttachEmailButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Attach Email"
+horizontal_alignment = 1
+
+[node name="ChangeUsernameButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 113.0
+offset_right = 420.0
+offset_bottom = 145.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/ChangeUsernameButton"]
+layout_mode = 0
+offset_left = 17.5
+offset_right = 182.5
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Change Username"
+horizontal_alignment = 1
+
+[node name="LogInButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 151.0
+offset_right = 420.0
+offset_bottom = 183.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/LogInButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Log In"
+horizontal_alignment = 1
+
+[node name="LeaderboardsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 151.0
+offset_right = 420.0
+offset_bottom = 183.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/LeaderboardsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Leaderboards"
+horizontal_alignment = 1
+
+[node name="StatisticsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 189.0
+offset_right = 420.0
+offset_bottom = 221.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/StatisticsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="AchievementsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 227.0
+offset_right = 420.0
+offset_bottom = 259.0
+texture_normal = ExtResource("6_iq8wk")
+texture_pressed = ExtResource("7_qnqc4")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/AchievementsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Achievements"
+horizontal_alignment = 1
+
+[node name="LogOutButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 265.0
+offset_right = 420.0
+offset_bottom = 297.0
+texture_normal = ExtResource("9_wsoap")
+texture_pressed = ExtResource("10_2xf6n")
+texture_disabled = ExtResource("8_vhib3")
+
+[node name="Label" type="Label" parent="Background/LogOutButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ar8lo")
+theme_override_font_sizes/font_size = 28
+text = "Log Out"
+horizontal_alignment = 1
