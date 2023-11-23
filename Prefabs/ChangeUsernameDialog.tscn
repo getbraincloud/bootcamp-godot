@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://vmdwevsan68e"]
+
+[ext_resource type="Script" path="res://Scripts/ChangeUsernameDialog.cs" id="1_v5cv1"]
+[ext_resource type="Texture2D" uid="uid://b3bs2ei6k2d6y" path="res://Textures/DialogBox-Small.png" id="2_fhu37"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="3_0eg3b"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="4_jmm7i"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="5_7hkia"]
+[ext_resource type="Texture2D" uid="uid://sxjsxq2ejxt8" path="res://Textures/BlueButton-Default.png" id="6_l5lju"]
+[ext_resource type="Texture2D" uid="uid://dyfv7wu1t624w" path="res://Textures/BlueButton-Pressed.png" id="7_geivv"]
+[ext_resource type="Texture2D" uid="uid://b1nicuxa804vo" path="res://Textures/GreyButton.png" id="8_jk13k"]
+
+[node name="ChangeUsernameDialog" type="Control" node_paths=PackedStringArray("_ChangeUsernameButton", "_UsernameLineEdit", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5cv1")
+_ChangeUsernameButton = NodePath("Background/ChangeUsernameButton")
+_UsernameLineEdit = NodePath("Background/LineEdit")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 460.0
+texture = ExtResource("2_fhu37")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 177.5
+offset_top = 8.0
+offset_right = 462.5
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_0eg3b")
+theme_override_font_sizes/font_size = 48
+text = "Change Username"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("4_jmm7i")
+texture_pressed = ExtResource("5_7hkia")
+
+[node name="ChangeUsernameButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 170.0
+offset_right = 400.0
+offset_bottom = 202.0
+texture_normal = ExtResource("6_l5lju")
+texture_pressed = ExtResource("7_geivv")
+texture_disabled = ExtResource("8_jk13k")
+
+[node name="Label" type="Label" parent="Background/ChangeUsernameButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 146.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_0eg3b")
+theme_override_font_sizes/font_size = 28
+text = "Change"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 98.0
+offset_right = 229.0
+offset_bottom = 134.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_0eg3b")
+theme_override_font_sizes/font_size = 32
+text = "Name:"
+
+[node name="LineEdit" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 98.0
+offset_right = 487.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("3_0eg3b")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter name..."
+max_length = 60

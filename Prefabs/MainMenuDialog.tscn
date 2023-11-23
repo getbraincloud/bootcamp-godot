@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcuris7tinfgt"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenuDialog.cs" id="1_lnw30"]
+[ext_resource type="Texture2D" uid="uid://b3bs2ei6k2d6y" path="res://Textures/DialogBox-Small.png" id="1_taxjr"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_jfhte"]
+[ext_resource type="Texture2D" uid="uid://bbhta37764wqy" path="res://Textures/BlueButtonWide-Default.png" id="4_5mhuf"]
+[ext_resource type="Texture2D" uid="uid://bvg1bmmtx47vw" path="res://Textures/BlueButtonWide-Pressed.png" id="5_8pm10"]
+[ext_resource type="Texture2D" uid="uid://dimty2n7dusgh" path="res://Textures/GreyButtonWide.png" id="6_etrs4"]
+[ext_resource type="Texture2D" uid="uid://eew4i76fs4n3" path="res://Textures/RedButtonWide-Default.png" id="7_05afv"]
+[ext_resource type="Texture2D" uid="uid://cua2yrlorsee4" path="res://Textures/RedButtonWide-Pressed.png" id="8_b5wo0"]
+
+[node name="MainMenuDialog" type="Control" node_paths=PackedStringArray("_EndlessModeButton", "_HordeModeButton", "_BrainCloudButton", "_ExitButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lnw30")
+_EndlessModeButton = NodePath("Background/EndlessModeButton")
+_HordeModeButton = NodePath("Background/HordeModeButton")
+_BrainCloudButton = NodePath("Background/BrainCloudButton")
+_ExitButton = NodePath("Background/ExitButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 460.0
+texture = ExtResource("1_taxjr")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 234.5
+offset_top = 8.0
+offset_right = 405.5
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_jfhte")
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
+
+[node name="EndlessModeButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 80.0
+offset_right = 420.0
+offset_bottom = 112.0
+texture_normal = ExtResource("4_5mhuf")
+texture_pressed = ExtResource("5_8pm10")
+texture_disabled = ExtResource("6_etrs4")
+
+[node name="Label" type="Label" parent="Background/EndlessModeButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jfhte")
+theme_override_font_sizes/font_size = 28
+text = "Endless Mode"
+horizontal_alignment = 1
+
+[node name="HordeModeButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 120.0
+offset_right = 420.0
+offset_bottom = 152.0
+texture_normal = ExtResource("4_5mhuf")
+texture_pressed = ExtResource("5_8pm10")
+texture_disabled = ExtResource("6_etrs4")
+
+[node name="Label" type="Label" parent="Background/HordeModeButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jfhte")
+theme_override_font_sizes/font_size = 28
+text = "Horde Mode"
+horizontal_alignment = 1
+
+[node name="BrainCloudButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 160.0
+offset_right = 420.0
+offset_bottom = 192.0
+texture_normal = ExtResource("4_5mhuf")
+texture_pressed = ExtResource("5_8pm10")
+texture_disabled = ExtResource("6_etrs4")
+
+[node name="Label" type="Label" parent="Background/BrainCloudButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jfhte")
+theme_override_font_sizes/font_size = 28
+text = "BrainCloud"
+horizontal_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 200.0
+offset_right = 420.0
+offset_bottom = 232.0
+texture_normal = ExtResource("7_05afv")
+texture_pressed = ExtResource("8_b5wo0")
+texture_disabled = ExtResource("6_etrs4")
+
+[node name="Label" type="Label" parent="Background/ExitButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jfhte")
+theme_override_font_sizes/font_size = 28
+text = "Exit"
+horizontal_alignment = 1
