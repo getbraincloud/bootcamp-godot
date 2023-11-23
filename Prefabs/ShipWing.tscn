@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://f1n8bqe77pfn"]
+
+[ext_resource type="Script" path="res://Scripts/ShipWing.cs" id="1_2klem"]
+
+[node name="ShipWing" type="Node2D"]
+script = ExtResource("1_2klem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
