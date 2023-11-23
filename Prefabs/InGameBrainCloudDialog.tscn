@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkow0wnmvth0g"]
+
+[ext_resource type="Script" path="res://Scripts/InGameBrainCloudDialog.cs" id="1_lv5we"]
+[ext_resource type="Texture2D" uid="uid://cf3nt2qb721vn" path="res://Textures/DialogBox-Narrow.png" id="2_gho38"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="3_d2n11"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="4_escu1"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="5_havag"]
+[ext_resource type="Texture2D" uid="uid://bbhta37764wqy" path="res://Textures/BlueButtonWide-Default.png" id="6_rjq7f"]
+[ext_resource type="Texture2D" uid="uid://bvg1bmmtx47vw" path="res://Textures/BlueButtonWide-Pressed.png" id="7_yw1c6"]
+[ext_resource type="Texture2D" uid="uid://dimty2n7dusgh" path="res://Textures/GreyButtonWide.png" id="8_25qrs"]
+
+[node name="InGameBrainCloudDialog" type="Control" node_paths=PackedStringArray("_ChangeUsernameButton", "_LeaderboardsButton", "_StatisticsButton", "_AchievementsButton", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lv5we")
+_ChangeUsernameButton = NodePath("Background/ChangeUsernameButton")
+_LeaderboardsButton = NodePath("Background/LeaderboardsButton")
+_StatisticsButton = NodePath("Background/StatisticsButton")
+_AchievementsButton = NodePath("Background/AchievementsButton")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 460.0
+texture = ExtResource("2_gho38")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 8.0
+offset_right = 314.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_d2n11")
+theme_override_font_sizes/font_size = 48
+text = "BrainCloud"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("4_escu1")
+texture_pressed = ExtResource("5_havag")
+
+[node name="ChangeUsernameButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 80.0
+offset_right = 300.0
+offset_bottom = 112.0
+texture_normal = ExtResource("6_rjq7f")
+texture_pressed = ExtResource("7_yw1c6")
+texture_disabled = ExtResource("8_25qrs")
+
+[node name="Label" type="Label" parent="Background/ChangeUsernameButton"]
+layout_mode = 0
+offset_left = 17.5
+offset_right = 182.5
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_d2n11")
+theme_override_font_sizes/font_size = 28
+text = "Change Username"
+horizontal_alignment = 1
+
+[node name="LeaderboardsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 300.0
+offset_bottom = 152.0
+texture_normal = ExtResource("6_rjq7f")
+texture_pressed = ExtResource("7_yw1c6")
+texture_disabled = ExtResource("8_25qrs")
+
+[node name="Label" type="Label" parent="Background/LeaderboardsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_d2n11")
+theme_override_font_sizes/font_size = 28
+text = "Leaderboards"
+horizontal_alignment = 1
+
+[node name="StatisticsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 160.0
+offset_right = 300.0
+offset_bottom = 192.0
+texture_normal = ExtResource("6_rjq7f")
+texture_pressed = ExtResource("7_yw1c6")
+texture_focused = ExtResource("8_25qrs")
+
+[node name="Label" type="Label" parent="Background/StatisticsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_d2n11")
+theme_override_font_sizes/font_size = 28
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="AchievementsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 232.0
+texture_normal = ExtResource("6_rjq7f")
+texture_pressed = ExtResource("7_yw1c6")
+texture_disabled = ExtResource("8_25qrs")
+
+[node name="Label" type="Label" parent="Background/AchievementsButton"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 166.0
+offset_bottom = 32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_d2n11")
+theme_override_font_sizes/font_size = 28
+text = "Achievements"
+horizontal_alignment = 1
