@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfpxemk4yud6i"]
+
+[ext_resource type="Script" path="res://Scripts/ErrorDialog.cs" id="1_ch0td"]
+[ext_resource type="Texture2D" uid="uid://cf3nt2qb721vn" path="res://Textures/DialogBox-Narrow.png" id="1_gqnn0"]
+[ext_resource type="FontFile" uid="uid://b5a4wbi15453d" path="res://Fonts/VT323-Regular.ttf" id="2_cixk2"]
+[ext_resource type="Texture2D" uid="uid://8lihfq275mt4" path="res://Textures/CloseButton-Default.png" id="3_akhuq"]
+[ext_resource type="Texture2D" uid="uid://dnbq7ynl17l2h" path="res://Textures/CloseButton-Pressed.png" id="4_inexu"]
+
+[node name="ErrorDialog" type="Control" node_paths=PackedStringArray("_ErrorLabel", "_CloseButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ch0td")
+_ErrorLabel = NodePath("Background/Label")
+_CloseButton = NodePath("Background/CloseButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 460.0
+texture = ExtResource("1_gqnn0")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 8.0
+offset_right = 314.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_cixk2")
+theme_override_font_sizes/font_size = 48
+text = "Error"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("3_akhuq")
+texture_pressed = ExtResource("4_inexu")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 70.0
+offset_right = 375.0
+offset_bottom = 239.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_cixk2")
+theme_override_font_sizes/font_size = 28
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
