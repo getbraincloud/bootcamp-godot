@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cis8gpfu8jdh5"]
+
+[ext_resource type="Script" path="res://Scripts/Asteroid.cs" id="1_jaoep"]
+[ext_resource type="Texture2D" uid="uid://bbre4pc16ovx6" path="res://Textures/AsteroidBig-1.png" id="2_hfknd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m81kl"]
+radius = 40.0
+
+[node name="Asteroid" type="Node2D"]
+script = ExtResource("1_jaoep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hfknd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m81kl")
+
+[connection signal="area_entered" from="Area2D" to="." method="_OnAreaEntered"]

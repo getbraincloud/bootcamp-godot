@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://4n4pfc68xiif"]
+
+[ext_resource type="Script" path="res://Scripts/Laser.cs" id="1_gfnok"]
+[ext_resource type="Texture2D" uid="uid://djqliemxvvo06" path="res://Textures/Laser-Blue.png" id="1_xvk5s"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ruyto"]
+b = Vector2(50, 0)
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_gfnok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xvk5s")
+centered = false
+offset = Vector2(0, -4.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_ruyto")
