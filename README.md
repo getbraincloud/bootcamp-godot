@@ -1,6 +1,6 @@
 # bootcamp-godot (Lesson-4)
 
-This repository contains the Godot project for Lesson 03 that is used for the Godot BootCamp.
+This repository contains the Godot project for Lesson 04 that is used for the Godot BootCamp.
 
 The Godot BootCamp can be found on Youtube at the link below:
 
