@@ -1,6 +1,6 @@
-# bootcamp-godot (Lesson-18)
+# bootcamp-godot (Lesson-19)
 
-This repository contains the Godot project for Lesson 18 that is used for the Godot BootCamp.
+This repository contains the Godot project for Lesson 19 that is used for the Godot BootCamp.
 
 The Godot BootCamp can be found on Youtube at the link below:
 
@@ -17,7 +17,7 @@ https://portal.braincloudservers.com/
 ```bash
 git clone https://github.com/getbraincloud/bootcamp-godot.git
 cd bootcamp-godot
-git checkout Lesson-18
+git checkout Lesson-19
 ```
 
 ## Notes
