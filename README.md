@@ -22,6 +22,6 @@ git checkout Lesson-7
 
 ## Notes
 
-The example Godot project in this repository contains the final code that was modified in Lesson 07 of the Godot BootCamp. In this lesson, the example Godot project is updated to reconnect a previously authenticated user with the brainCloud servers.
+The example Godot project in this repository contains the final code that was modified in Lesson 09 of the Godot BootCamp. In this lesson, the example Godot project is updated to support Universal authentication (userID + password).
 
 Godot version: 4.2.1
