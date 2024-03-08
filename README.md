@@ -1,6 +1,6 @@
 # bootcamp-godot (Lesson-9)
 
-This repository contains the Godot project for Lesson 03 that is used for the Godot BootCamp.
+This repository contains the Godot project for Lesson 09 that is used for the Godot BootCamp.
 
 The Godot BootCamp can be found on Youtube at the link below:
 
@@ -22,6 +22,6 @@ git checkout Lesson-9
 
 ## Notes
 
-The example Godot project in this repository contains the final code that was modified in Lesson 08 of the Godot BootCamp. In this lesson, the example Godot project is updated to include the ability to log out the user from an authenticated brainCloud session.
+The example Godot project in this repository contains the final code that was modified in Lesson 09 of the Godot BootCamp. In this lesson, the example Godot project is updated to include the ability to log out the user from an authenticated brainCloud session.
 
 Godot version: 4.2.1
