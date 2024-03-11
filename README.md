@@ -1,10 +1,10 @@
 # bootcamp-godot
 
-This repository contains the initial Godot project that is used for the Godot BootCamp learning series.
+This repository contains the initial Godot project that is used for the Godot BootCamp.
 
-The Godot BootCamp learning series can be found on Youtube at the link below:
+The Godot BootCamp can be found at the link below:
 
-https://www.youtube.com/watch?v=wgkczrKIrAo&list=PLDHkRGdDbBBL4CL89BYkZDpY289at93FP
+https://bootcamp.braincloudservers.com/?mto-course=godot-bootcamp
 
 
 If you haven't signed up or you want to log into the brainCloud portal, you can do that here:
@@ -22,6 +22,6 @@ git checkout Initial-Project
 
 ## Notes
 
-The Godot example project in this repository intentionally does not contain the brainCloud C# library. This project is intended to be the starting code for lesson 03 in the Godot BootCamp learning series.
+The Godot example project in this repository intentionally does not contain the brainCloud C# library. This project is intended to be the starting code for lesson 03 in the Godot BootCamp.
 
 Godot version: 4.2.1
