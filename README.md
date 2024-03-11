@@ -2,9 +2,9 @@
 
 This repository contains the Godot project for Lesson 08 that is used for the Godot BootCamp.
 
-The Godot BootCamp can be found on Youtube at the link below:
+The Godot BootCamp can be found at the link below:
 
-https://www.youtube.com/watch?v=wgkczrKIrAo&list=PLDHkRGdDbBBL4CL89BYkZDpY289at93FP
+https://bootcamp.braincloudservers.com/?mto-course=godot-bootcamp
 
 
 If you haven't signed up or you want to log into the brainCloud portal, you can do that here:
