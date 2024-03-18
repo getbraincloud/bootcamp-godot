@@ -40,6 +40,15 @@ public partial class Network : Node
 		m_BrainCloud.RunCallbacks();
 	}
 
+	public override void _Notification(int notification)
+	{
+		if (notification == NotificationWMCloseRequest) 
+		{
+ 			EndSession();
+			GetTree().Quit(); // default behavior
+		}
+	}
+
 	public bool HasAuthenticatedPreviously()
 	{
 		return m_BrainCloud.GetStoredProfileId() != "" && m_BrainCloud.GetStoredAnonymousId() != "";
@@ -53,6 +62,11 @@ public partial class Network : Node
 	public void ResetStoredProfileId()
 	{
 		m_BrainCloud.ResetStoredProfileId();
+	}
+
+	public void EndSession()
+	{
+		m_BrainCloud.Logout(false);
 	}
 
 	public void LogOut(BrainCloudLogOutCompleted brainCloudLogOutCompleted = null, BrainCloudLogOutFailed brainCloudLogOutFailed = null)
@@ -70,10 +84,6 @@ public partial class Network : Node
 		{
 			OutputLog("Log out successful: " + responseData);
 
-			// The user logged out, clear the persisted data related to their account
-			m_BrainCloud.ResetStoredAnonymousId();
-			m_BrainCloud.ResetStoredProfileId();
-
 			if (brainCloudLogOutCompleted != null)
 				brainCloudLogOutCompleted();
 		};
@@ -86,7 +96,7 @@ public partial class Network : Node
 		};
 
 		// Make the BrainCloud request
-		m_BrainCloud.PlayerStateService.Logout(successCallback, failureCallback);
+		m_BrainCloud.Logout(true, successCallback, failureCallback);
 	}
 
 	public void Reconnect(AuthenticationRequestCompleted authenticationRequestCompleted = null, AuthenticationRequestFailed authenticationRequestFailed = null)
