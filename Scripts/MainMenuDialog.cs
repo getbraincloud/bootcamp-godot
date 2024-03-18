@@ -48,6 +48,7 @@ public partial class MainMenuDialog : Dialog
 
 	public void OnExitButtonClicked()
 	{
+		Game.sharedInstance.GetNetwork.EndSession();
 		this.GetTree().Quit();
 	}
 }
