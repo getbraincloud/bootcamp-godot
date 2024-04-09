@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public partial class HUD : Node2D
 {
+	[Export] private Label _appVersion = null;
+	[Export] private Label _brainCloudVersion = null;
 	[Export] private Label _timerLabel = null;
 	[Export] private Label _mainInformation = null;
 	[Export] private Label _secondaryInformation = null;
@@ -43,6 +45,16 @@ public partial class HUD : Node2D
 			_secondaryInformation.Modulate = color;
 		}
 	}
+
+	public void SetAppVersion(string version)
+    {
+        _appVersion.Text = "App version: " + version;
+    }
+
+    public void SetBrainCloudVersion(string version)
+    {
+        _brainCloudVersion.Text = "BC Client version: " + version;
+    }
 
 	public void SetElapsedTime(double elapsedTime)
 	{
