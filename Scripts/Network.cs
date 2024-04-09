@@ -15,6 +15,11 @@ public partial class Network : Node
 		set { m_EnabledLogging = value; }
 	}
 
+	public string BrainCloudClientVersion
+    {
+        get { return ""; }
+    }
+
 	public override void _Ready()
 	{
 
