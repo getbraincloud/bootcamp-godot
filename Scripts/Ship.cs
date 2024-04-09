@@ -345,6 +345,9 @@ public partial class Ship : BaseNode
 	private void OnSpawnCompleted(Slider slider)
 	{
 		m_IsSpawning = false;
+
+		m_LinearVelocity = Vector2.Zero;
+		m_Acceleration = Vector2.Zero;
 	}
 	
 	private void _OnAreaEntered(Area2D area)

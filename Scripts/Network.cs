@@ -45,6 +45,11 @@ public partial class Network : Node
 		set { m_EnabledLogging = value; }
 	}
 
+	public string BrainCloudClientVersion
+	{
+		get { return m_BrainCloud.Client.BrainCloudClientVersion; }
+	}
+
 	public LeaderboardsManager GetLeaderboardsManager
 	{
 		get { return m_LeaderboardsManager; }
