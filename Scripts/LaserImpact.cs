@@ -17,9 +17,11 @@ public partial class LaserImpact : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        double timeScale = Game.sharedInstance.TimeScale;
+
 		if (m_Lifetime > 0.0)
         {
-            m_Lifetime -= delta;
+            m_Lifetime -= delta * timeScale;
 
             if (m_Lifetime <= 0.0)
             {
