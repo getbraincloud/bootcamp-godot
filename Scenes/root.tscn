@@ -62,8 +62,10 @@ texture = ExtResource("4_w6ug1")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClippingRect/Ship/Area2D"]
 polygon = PackedVector2Array(32, 3, -19, 41, -24, 41, -33, 10, -33, -10, -24, -41, -19, -41, 32, -3)
 
-[node name="HUD" type="Node2D" parent="." node_paths=PackedStringArray("_timerLabel", "_mainInformation", "_secondaryInformation", "_infoControlMask")]
+[node name="HUD" type="Node2D" parent="." node_paths=PackedStringArray("_appVersion", "_brainCloudVersion", "_timerLabel", "_mainInformation", "_secondaryInformation", "_infoControlMask")]
 script = ExtResource("7_iy1sd")
+_appVersion = NodePath("AppVersion")
+_brainCloudVersion = NodePath("BrainCloudVersion")
 _timerLabel = NodePath("TimeLabel")
 _mainInformation = NodePath("PrimaryInfoLabel")
 _secondaryInformation = NodePath("SecondaryInfoLabel")
@@ -96,6 +98,34 @@ theme_override_fonts/font = ExtResource("10_wbpjx")
 theme_override_font_sizes/font_size = 28
 text = "Time: 00:00"
 horizontal_alignment = 2
+
+[node name="AppVersion" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 652.0
+offset_right = 308.0
+offset_bottom = 682.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "App version:"
+vertical_alignment = 1
+
+[node name="BrainCloudVersion" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 682.0
+offset_right = 308.0
+offset_bottom = 712.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "BC Client version:"
+vertical_alignment = 1
 
 [node name="HealthBar" type="Node2D" parent="HUD" node_paths=PackedStringArray("_fillBar", "_dangerFillBar")]
 position = Vector2(228, 24)
@@ -141,10 +171,10 @@ texture = ExtResource("14_px3kw")
 
 [node name="PrimaryInfoLabel" type="Label" parent="HUD"]
 visible = false
-offset_left = 180.0
-offset_top = 220.0
-offset_right = 1100.0
-offset_bottom = 370.0
+offset_left = 40.0
+offset_top = 216.0
+offset_right = 1240.0
+offset_bottom = 366.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("10_wbpjx")
@@ -154,9 +184,9 @@ vertical_alignment = 1
 
 [node name="SecondaryInfoLabel" type="Label" parent="HUD"]
 visible = false
-offset_left = 180.0
+offset_left = 40.0
 offset_top = 380.0
-offset_right = 1100.0
+offset_right = 1240.0
 offset_bottom = 432.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
