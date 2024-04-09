@@ -40,6 +40,8 @@ public partial class Ship : BaseNode
 	public override void _Process(double delta)
 	{
 		double timeScale = Game.sharedInstance.TimeScale;
+		if(timeScale == 0.0f)
+			return;
 		
 		if (m_IsSpawning)
 		{

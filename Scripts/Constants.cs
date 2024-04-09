@@ -7,8 +7,8 @@ public static class Constants
 {
     // BrainCloud constants
     public const string kBrainCloudServer = "https://api.braincloudservers.com/dispatcherv2";
-    public const string kBrainCloudAppID = ""; // App ID is empty on purpose
-    public const string kBrainCloudAppSecret = "";  // App secret is empty on purpose
+	public const string kBrainCloudAppID = ""; // App ID is empty on purpose
+	public const string kBrainCloudAppSecret = "";  // App secret is empty on purpose
     public const string kBrainCloudAppName = "Godot BootCamp";
     public const string kBrainCloudAppVersion = "1.0.1";
 
