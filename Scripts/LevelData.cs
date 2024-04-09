@@ -122,6 +122,18 @@ public class LevelData
 			health = (int)enemyType["Health"];
 			m_EnemyVariants.Add(new EnemyVariant(type, health));
 		}
+
+		Array startingAsteroids = levelData["StartingAsteroids"] as Array;
+		for (int i = 0; i < startingAsteroids.Length; i++)
+		{
+			m_StartingAsteroids.Add(startingAsteroids.GetValue(i) as string);
+		}
+
+		Array startingEnemies = levelData["StartingEnemies"] as Array;
+		for (int i = 0; i < startingEnemies.Length; i++)
+		{
+			m_StartingEnemies.Add(startingEnemies.GetValue(i) as string);
+		}
 	}
 
 	public int GetHealthForEnemyVariant(string enemyVariant)
