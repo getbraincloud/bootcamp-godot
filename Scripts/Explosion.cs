@@ -20,9 +20,11 @@ public partial class Explosion : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+ 		double timeScale = Game.sharedInstance.TimeScale;
+
 		if (m_Delay > 0.0)
         {
-            m_Delay -= delta;
+            m_Delay -= delta * timeScale;
 
             if (m_Delay < 0.0)
             {
