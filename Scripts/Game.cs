@@ -44,6 +44,11 @@ public partial class Game : Node2D
 
 	private Mode m_Mode = Mode.Unknown;
 
+	public String AppVersion
+	{
+		get { return ProjectSettings.GetSetting("application/config/version").ToString(); }
+	}
+
 	public double TimeScale
 	{
 		get { return m_TimeScale; }
@@ -67,6 +72,9 @@ public partial class Game : Node2D
 
 		GD.Randomize();
  
+		_HUD.SetAppVersion(AppVersion);
+		_HUD.SetBrainCloudVersion(GetNetwork.BrainCloudClientVersion);
+
 		_Ship.Disable();
 		_Ship.SetDelegate(OnShipHasExploded);
 
@@ -86,7 +94,7 @@ public partial class Game : Node2D
 				m_EndOfGameDisplayTime -= delta * m_TimeScale;
 				if (m_EndOfGameDisplayTime < 0.0)
 				{
-					if(m_GameState == GameState.GameOver)
+					if(m_GameState == GameState.GameOver || m_GameState == GameState.Victory)
 						_HUD.HideGameOver();
 					if (m_GameState == GameState.Victory)
 						_HUD.HideGameWon();
