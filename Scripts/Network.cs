@@ -21,6 +21,11 @@ public partial class Network : Node
 		set { m_EnabledLogging = value; }
 	}
 
+	public string BrainCloudClientVersion
+	{
+		get { return m_BrainCloud.Client.BrainCloudClientVersion; }
+	}
+
 	public override void _Ready()
 	{
 		// Create and initialize the BrainCloud wrapper
