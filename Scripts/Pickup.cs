@@ -26,11 +26,13 @@ public partial class Pickup : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		HandleFade(delta);
+		double timeScale = Game.sharedInstance.TimeScale;
+		
+		HandleFade(delta * timeScale);
 
 		if (m_Lifetime > 0.0)
 		{
-			m_Lifetime -= delta;
+			m_Lifetime -= delta * timeScale;
 			if (m_Lifetime <= 0.0)
 			{
 				m_Lifetime = 0.0;
@@ -39,7 +41,7 @@ public partial class Pickup : BaseNode
 		}
 
 		Vector2 position = this.Position;
-		position += m_LinearVelocity * (float)delta;
+		position += m_LinearVelocity * (float)(delta * timeScale);
 		this.Position = position;
 
 		if (position.X < -m_SpriteSize.X)
