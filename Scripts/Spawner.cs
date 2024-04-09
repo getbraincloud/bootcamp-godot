@@ -57,7 +57,8 @@ public partial class Spawner : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (!m_CanSpawn)
+		double timeScale = Game.sharedInstance.TimeScale;
+		if (!m_CanSpawn || timeScale == 0.0f)
 			return;
 
 		if (HandleSpawnTimer(delta, ref m_AsteroidSpawnTimer))
