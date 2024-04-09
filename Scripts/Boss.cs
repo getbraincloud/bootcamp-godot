@@ -42,9 +42,11 @@ public partial class Boss : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		double timeScale = Game.sharedInstance.TimeScale;
+
 		if (m_Slider.IsSliding())
 		{
-			m_Slider.Update(delta);
+			m_Slider.Update(delta * timeScale);
 			this.Position = m_Slider.Current;
 		}
 
@@ -52,7 +54,7 @@ public partial class Boss : BaseNode
 		{
 			if (m_MovementDelay > 0.0)
 			{
-				m_MovementDelay -= delta;
+				m_MovementDelay -= delta * timeScale;
 
 				if (m_MovementDelay < 0.0)
 				{
@@ -70,7 +72,7 @@ public partial class Boss : BaseNode
 
 			if (m_SmallMissileDelay > 0.0)
 			{
-				m_SmallMissileDelay -= delta;
+				m_SmallMissileDelay -= delta * timeScale;
 
 				if (m_SmallMissileDelay <= 0.0)
 				{
@@ -81,7 +83,7 @@ public partial class Boss : BaseNode
 
 			if (m_BigMissileDelay > 0.0)
 			{
-				m_BigMissileDelay -= delta;
+				m_BigMissileDelay -= delta * timeScale;
 
 				if (m_BigMissileDelay <= 0.0)
 				{
@@ -89,7 +91,6 @@ public partial class Boss : BaseNode
 					FireMissile(Missile.Size.Big);
 				}
 			}
-
 		}
 	}
 
