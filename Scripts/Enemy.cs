@@ -37,11 +37,12 @@ public partial class Enemy : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		double timeScale = Game.sharedInstance.TimeScale;
 		Vector2 visibleAreaSize = Game.sharedInstance.VisibleAreaSize;
 
 		// Move the enemy
 		Vector2 position = this.Position;
-		position += m_LinearVelocity * (float)delta;
+		position += m_LinearVelocity * (float)(delta * timeScale);
 		this.Position = position;
 
 		// Only fire a laser if the front of the enemy is on-screen
@@ -55,7 +56,7 @@ public partial class Enemy : BaseNode
 			{
 				if (m_EnemyFourFiringCooldown > 0.0)
 				{
-					m_EnemyFourFiringCooldown -= delta;
+					m_EnemyFourFiringCooldown -= delta * timeScale;
 
 					if (m_EnemyFourFiringCooldown < 0.0)
 					{
@@ -70,7 +71,7 @@ public partial class Enemy : BaseNode
 
 					if (m_EnemyFourFiringDuration > 0.0)
 					{
-						m_EnemyFourFiringDuration -= delta;
+						m_EnemyFourFiringDuration -= delta * timeScale;
 
 						if (m_EnemyFourFiringDuration < 0.0)
 						{
@@ -85,7 +86,7 @@ public partial class Enemy : BaseNode
 			{
 				if (m_EnemyFiveMissileCooldown > 0.0)
 				{
-					m_EnemyFiveMissileCooldown -= delta;
+					m_EnemyFiveMissileCooldown -= delta * timeScale;
 
 					if (m_EnemyFiveMissileCooldown < 0.0)
 					{
@@ -98,7 +99,7 @@ public partial class Enemy : BaseNode
 
 					if (m_EnemyFiveMissileDelay > 0.0)
 					{
-						m_EnemyFiveMissileDelay -= delta;
+						m_EnemyFiveMissileDelay -= delta * timeScale;
 
 						if (m_EnemyFiveMissileDelay < 0.0)
 						{
@@ -115,7 +116,7 @@ public partial class Enemy : BaseNode
 
 			if (m_LaserDelay > 0.0 && canFire)
 			{
-				m_LaserDelay -= delta;
+				m_LaserDelay -= delta * timeScale;
 
 				if (m_LaserDelay <= 0.0)
 				{

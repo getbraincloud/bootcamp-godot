@@ -18,15 +18,16 @@ public partial class ShipWing : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		HandleFade(delta);
+        double timeScale = Game.sharedInstance.TimeScale;
+		HandleFade(delta * timeScale);
 
         // Move the asteroid
         Vector2 position = this.Position;
-        position += m_LinearVelocity * (float)delta;
+        position += m_LinearVelocity * (float)(delta * timeScale);
         this.Position = position;
 
         float angle = this.Rotation;
-        angle += m_AngularVelocity * m_SpinDirection * (float)delta;
+        angle += m_AngularVelocity * m_SpinDirection * (float)(delta * timeScale);
         if (m_SpinDirection > 0.0f && angle > MathF.PI * 2.0f)
         {
             angle -= MathF.PI * 2.0f;
