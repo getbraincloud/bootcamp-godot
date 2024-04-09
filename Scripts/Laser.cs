@@ -26,8 +26,10 @@ public partial class Laser : BaseNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		double timeScale = Game.sharedInstance.TimeScale;
+
 		Vector2 position = this.Position;
-		position += m_LinearVelocity * (float)delta;
+		position += m_LinearVelocity * (float)(delta * timeScale);
 		this.Position = position;
 
 		float windowWidth = DisplayServer.WindowGetSize().X;
