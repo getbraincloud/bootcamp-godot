@@ -18,7 +18,10 @@ public partial class Ship : BaseNode
 	private ShipHasExploded m_ShipHasExploded;
 	private Slider m_SpawnSlider;
 	private bool m_IsSpawning = false;
-	
+	private bool m_RightKeyPressed = false;
+	private bool m_LeftKeyPressed = false;
+	private bool m_UpKeyPressed = false;
+	private bool m_DownKeyPressed = false;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -229,6 +232,7 @@ public partial class Ship : BaseNode
 	{		
 		if (!m_IsSpawning)
 		{
+			m_UpKeyPressed = true;
 			m_Acceleration.Y -= Constants.kShipAcceleration;
 			m_LinearVelocity.Y = m_Acceleration.Y;
 		}
@@ -238,6 +242,7 @@ public partial class Ship : BaseNode
 	{
 		if (!m_IsSpawning)
 		{
+			m_DownKeyPressed = true;
 			m_Acceleration.Y += Constants.kShipAcceleration;
 			m_LinearVelocity.Y = m_Acceleration.Y;
 		}
@@ -245,10 +250,9 @@ public partial class Ship : BaseNode
 
 	public void OnMovementLeftStart()
 	{
-		GD.Print(m_IsSpawning);
-
 		if (!m_IsSpawning)
 		{
+			m_LeftKeyPressed = true;
 			m_Acceleration.X -= Constants.kShipAcceleration;
 			m_LinearVelocity.X = m_Acceleration.X;
 		}
@@ -258,6 +262,7 @@ public partial class Ship : BaseNode
 	{
 		if (!m_IsSpawning)
 		{
+			m_RightKeyPressed = true;
 			m_Acceleration.X += Constants.kShipAcceleration;
 			m_LinearVelocity.X = m_Acceleration.X;
 		}
@@ -265,32 +270,36 @@ public partial class Ship : BaseNode
 
 	public void OnMovementUpStop()
 	{
-		if (!m_IsSpawning)
+		if (!m_IsSpawning && m_UpKeyPressed)
 		{
+			m_UpKeyPressed = false;
 			m_Acceleration.Y += Constants.kShipAcceleration;
 		}
 	}
 
 	public void OnMovementDownStop()
 	{
-		if (!m_IsSpawning)
+		if (!m_IsSpawning && m_DownKeyPressed)
 		{
+			m_DownKeyPressed = false;
 			m_Acceleration.Y -= Constants.kShipAcceleration;
 		}
 	}
 
 	public void OnMovementLeftStop()
 	{
-		if (!m_IsSpawning)
+		if (!m_IsSpawning && m_LeftKeyPressed)
 		{
+			m_LeftKeyPressed = false;
 			m_Acceleration.X += Constants.kShipAcceleration;
 		}
 	}
 
 	public void OnMovementRightStop()
 	{
-		if (!m_IsSpawning)
+		if (!m_IsSpawning && m_RightKeyPressed)
 		{
+			m_RightKeyPressed = false;
 			m_Acceleration.X -= Constants.kShipAcceleration;
 		}
 	}
