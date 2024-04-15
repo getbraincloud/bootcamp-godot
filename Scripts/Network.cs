@@ -276,7 +276,7 @@ public partial class Network : Node
 
 		try
 		{
-			System.Diagnostics.Process.Start("explorer.exe", $"\"{url}\"");
+			OS.ShellOpen(url);
 		}
 		catch (Exception e)
 		{
