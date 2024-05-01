@@ -587,7 +587,7 @@ public partial class Network : Node
 	public void AwardAchievement(Achievement achievement, AchievementAwardedCompleted achievementAwardedCompleted = null, AchievementAwardedFailed achievementAwardedFailed = null)
 	{
 		List<Achievement> achievements = new List<Achievement>() {achievement};
-		AwardAchievements(ref achievements);
+		AwardAchievements(ref achievements, achievementAwardedCompleted, achievementAwardedFailed);
 	}
 
 	public void AwardAchievements(ref List<Achievement> achievements, AchievementAwardedCompleted achievementAwardedCompleted = null, AchievementAwardedFailed achievementAwardedFailed = null)
